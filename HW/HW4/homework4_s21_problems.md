@@ -22,7 +22,8 @@ _ECE-GY 9123 / Spring 2021_
 
 1. **(3 points)** *RNNs for images*. In this exercise, we will develop an RNN-type architecture for processing multi-dimensional data (such as RGB images). Here, hidden units are themselves arranged in the form of a grid (as opposed to a sequence). Each hidden unit is connected from the corresponding node from the input layer, as well as recurrently connected to its "top" and "left" neighbors. Here is a picture:
 
-    ![2D RNNs](figures/multidim-rnn.png){ width=90% }
+    ![WeChat Screenshot_20210331004958](https://user-images.githubusercontent.com/68700549/113092014-2cb67900-91bb-11eb-8348-7ebf885b33e7.png)
+
 
     The equation for the hidden unit is given as follows (assume no bias parameters for simplicity):
     $$
