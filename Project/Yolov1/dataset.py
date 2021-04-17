@@ -57,7 +57,7 @@ class VOCDataset(torch.utils.data.Dataset):
             i, j = int(self.S * y), int(self.S * x)
             #这个是表示在那一个cell中的具体位置，也就是那个小数点后的数
             x_cell, y_cell = self.S * x - j, self.S * y - i
-
+            #这个好像也不大懂
             width_cell, height_cell = (
                 width * self.S,
                 height * self.S
