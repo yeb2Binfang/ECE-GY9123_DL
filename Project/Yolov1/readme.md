@@ -55,15 +55,8 @@ Finally, class conditional probabilities from Output[:, :, 0:19] and confidences
 
 As mentioned, Yolov1 reframes object detection as the regression problem. Therefore, it is easy to use sum-squared error to optimize our model. The loss function used in our model is
 
-$\lambda _{coord} \sum_{i=0}^{S^2}\sum_{j=0}^B 1_{ij}^{obj}[(x_i-\hat{x_i})^2 + (y_i-\hat{y_i})^2]$                                                                                $(I)$
+![WeChat Screenshot_20210428111729](https://user-images.githubusercontent.com/68700549/116428930-62c73700-a813-11eb-9b17-38e293673313.png)
 
-​				$+\lambda _{coord}\sum_{i=0}^{S^2}\sum_{j=0}^B 1_{ij}^{obj}[(\sqrt w_i - \sqrt {\hat{w_i}^2}) + (\sqrt{h_i} - \sqrt{\hat{h_i}})^2]$                                           $(II)$
-
-​						$+\sum_{i=0}^{S^2}\sum_{j=0}^B 1_{ij}^{obj}(C_i - \hat{C_i})^2 $                                                                                       $(III)$
-
-​								$+\lambda _{noobj} \sum_{i=0}^{S^B} \sum_{j=0}^B 1_{ij}^{noobj} (C_i - \hat{C_i})$                                                                   $(IV)$
-
-​										$+ \sum_{i=0}^{S^2}1_i^{obj}\sum_{c\in classes}(p_i(c)-\hat{p}_i(c))^2$                                                      $(V)$
 
 Part$(I)$ and part$(II)$ is penalizing the coordinate error and the ratio error. For part$(II)$, the sum-squared error will equally weight errors in large boxes and small boxes if we do not add square root on $w$ and $h$. The small boxes should matter more than the large boxes when we use the same deviations on them. Taking the square root can partially address this issue. Figure 2 shows how does the square root work. Part$(III)$ and part$(IV)$ will penalize the confident errors. But for part$(III)$, we take the bounding box that is responsible for the predicting object, while for part$(IV)$, we take the bounding box that is not responsible for the predicting object. In the loss function, $1_{ij}^{obj}$ denotes that the $j^{th}$ bounding box predictor in cell $i$ takes the responsible for the prediction. We will only take only one bounding box that has the highest IOU with the ground truth in each cell to be responsible for predicting object. We use two parameters $\lambda _{cood}=5$ and $\lambda _{noobj}=0.5$ to make the model stable. Many grid cells in a image probably do not have many objects so that the confident scores for those cells are 0, which will affect the gradient from cells that do have the object. Therefore, we increase the loss for cells that do contain the object and decrease the confident loss from cells that do not contain objects. Part$(V)$ will penalize the classification error. $1_i^{obj}$ denotes that whether an object appears in the cell it or not.
 
