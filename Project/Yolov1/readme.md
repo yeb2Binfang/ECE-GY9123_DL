@@ -16,7 +16,7 @@
 
 #### Binfang Ye, Simon Wang
 
-#### Please check [Project Report for ECE-GY 9123 Deep Learning]() for more details
+#### Please check [Project Report for ECE-GY 9123 Deep Learning](https://github.com/yeb2Binfang/ECE-GY9123_DL/blob/main/Project/Yolov1/ECE_GY_9123_DL_Final_Report.pdf) for more details
 
 
 
@@ -105,14 +105,56 @@ The final layer predictions contain class probabilities and bounding box informa
 
 </div>
 
-Our dataset of choice is the PascalVOC dataset that contains 43,223 images. This dataset offers ahuge number of annotated images and we will focus on using its “Bounding Box” annotations. Anannotation TXT file is also provided with useful information including “class”, “x”, “y”, “w”, “h”. During our training process, we will use such information to identify if the object(s) within an image and their locations in terms of XY coordinates. We can also identify the bounding boxes throughratio W and H. There are 20 object categories in total. The number from [0,19] represents airplane,bike, bird, boat, bottle, bus, car, cat, chair, cow, table, dog, horse, motorbike, person, plant, sheep, sofa,  train, and tv differently. However, we found that the data and labels (9,958 images and labelsare matched correctly) are messy in this dataset. Therefore, we cleaned up the dataset and randomly selected 5,000, 200, and 100 images as the training, validation, and testing dataset respectively. The dataset, label information, and the CSV files can be  found [here](https://drive.google.com/drive/folders/1dqW6nx5gaRX-XihvkK81Kw1xhsT0j9Sr?usp=sharing)
+Our dataset of choice is the PascalVOC dataset that contains 43,223 images. This dataset offers ahuge number of annotated images and we will focus on using its “Bounding Box” annotations. Anannotation TXT file is also provided with useful information including “class”, “x”, “y”, “w”, “h”. During our training process, we will use such information to identify if the object(s) within an image and their locations in terms of XY coordinates. We can also identify the bounding boxes throughratio W and H. There are 20 object categories in total. The number from [0,19] represents airplane,bike, bird, boat, bottle, bus, car, cat, chair, cow, table, dog, horse, motorbike, person, plant, sheep, sofa,  train, and tv differently. However, we found that the data and labels (9,958 images and labelsare matched correctly) are messy in this dataset. Therefore, we cleaned up the dataset and randomly selected 5,000, 200, and 100 images as the training, validation, and testing dataset respectively. The dataset, label information, and CSV files can be  found [here](https://drive.google.com/drive/folders/1dqW6nx5gaRX-XihvkK81Kw1xhsT0j9Sr?usp=sharing)
 
 
 <div align = "center">
   
 ## Results
 
+We apply the model on the training dataset, evaluation dataset, testing dataset.
 </div>
+
+<p align="center">
+<img src="https://user-images.githubusercontent.com/68700549/118414654-f2723f80-b673-11eb-851f-af626ed3681b.png" align="center" height="200">
+</p>
+
+<div align="center"> 
+  
+Figure 3: Correct predictions on training dataset
+
+</div>
+
+<p align="center">
+<img src="https://user-images.githubusercontent.com/68700549/118414732-4e3cc880-b674-11eb-9a38-c5e8618fab83.png" align="center" height="200">
+</p>
+
+<div align="center"> 
+  
+Figure 4: Correct predictions on evaluation dataset
+
+</div>
+
+<p align="center">
+<img src="https://user-images.githubusercontent.com/68700549/118414779-8c39ec80-b674-11eb-8e71-2f8ff6a13252.png" align="center" height="200">
+</p>
+
+<div align="center"> 
+  
+Figure 5: Correct predictions on testing dataset
+
+</div>
+
+<p align="center">
+<img src="https://user-images.githubusercontent.com/68700549/118414801-a83d8e00-b674-11eb-82df-83d507078bc6.png" align="center" height="200">
+</p>
+
+<div align="center"> 
+  
+Figure 6: Wrong detections on randomly picked images
+
+</div>
+
 
 <div align = "center">
   
@@ -120,7 +162,7 @@ Our dataset of choice is the PascalVOC dataset that contains 43,223 images. This
 
 </div>
 
-We save our pretrained model [here](). We can just download all of scripts including dataset.py, loss.py, utils.py, model.py and upload it to Google Colab. Then we need to downlaod the train.csv, evalution.csv, and test .csv files to access the dataset that is mentioned in section **Dataset Description**. We also have the script for generating CSV file if you want to change the number of the training, evalution, and testing dataset. We need to use Google Colab GPU to accerlate the training speed. If you want to re-train the model, it will take about 3 hours to finish using 5,000 images.  
+We save our pretrained model [here](https://drive.google.com/drive/folders/1gYuX5FztKkzlj4W6k8ohfMfsuff0MbAv?usp=sharing). We can just download all of scripts including dataset.py, loss.py, utils.py, model.py and upload it to Google Colab. Then we need to downlaod the train.csv, evalution.csv, and test .csv files to access the dataset that is mentioned in section **Dataset Description**. We also have the script for generating CSV file if you want to change the number of the training, evalution, and testing dataset. We need to use Google Colab GPU to accerlate the training speed. If you want to re-train the model, it will take about 3 hours to finish using 5,000 images.  
 
 <div align = "center">
   
