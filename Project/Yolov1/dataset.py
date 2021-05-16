@@ -6,7 +6,7 @@ import PIL import Image
 class VOCDataset(torch.utils.data.Dataset):
     def __init__(
         #各种文件files
-        #transform不知道是干嘛用的
+        #transform, 在compose 那里，可以normalized dataset
         self, csv_file, img_dir, label_dir, S=7, B=2, C=20, transform = None
     ):
         self.annotations = pd.read_csv(csv_file)
@@ -24,17 +24,17 @@ class VOCDataset(torch.utils.data.Dataset):
 
         #label.txt
         label.path = os.path.join(self.label_dir, self.annotations.iloc[index,1])
-        #不知道这个boxes干嘛用的
+        #记录class label, x, y w, h
         boxes = []
         with open(label.path) as f:
             for label in f.readlines():
-                #感觉这部分有问题
+             
                 class_label, x, y, width, height = {
-                    #感觉有点鸡肋，应该可以改
+               
                     float(x) if float(x)!=int(float(x)) else int(x)
                     for x in label.replace("\n", "").split()
                 }
-                #这里顺序可能会有问题
+            
                 boxes.append([class_label, x, y, width, height])
 
         #image files
