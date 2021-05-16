@@ -41,14 +41,12 @@ LABEL_DIR = "data/archive/labels"
 # entire class requires further explainations
 class Compose(object):
     def __init__(self, transforms):
-        self.transfroms = transforms
+        self.transforms = transforms
 
     def __call__(self, img, bboxes):
-        print(self.transforms)
-        for t in self.transorms:
-            print(t)
+        for t in self.transforms:
             img, bboxes = t(img), bboxes
-    
+
         return img, bboxes
     
     
