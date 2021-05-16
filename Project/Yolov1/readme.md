@@ -1,12 +1,29 @@
+<p align="center">
+<a href="https://engineering.nyu.edu/"><img src="https://user-images.githubusercontent.com/68700549/118066006-eaf92080-b36b-11eb-9116-9f8e02a79534.png" align="center" height="100"></a>
+</p>
+
+<div align="center"> 
+  
+## New York University
+
+ </div>
+
 <div align = "center">
-    <h3>
-        Deep Understanding of YOLOv1 and Object Detection System Based on YOLOv1
-    </h3>
+    
+ # Deep Understanding of YOLOv1 and Object Detection System Based on YOLOv1
+ 
+ #### Project  Report  for  ECE-GY 9123  Deep Learning
+
+
+### Course  Instructor:  Dr.  Chinmay Hegde
+
+#### Binfang Ye, Simon Wang
+
+#### Please check [project report]() for more details
+
+
+
 </div>
-
-<div align = "center">Binfang Ye(@by2034)</div>
-
-<div align = "center">Simon Wang(@ssw8641)</div>
 
 #### 1	Problem Statement
 
