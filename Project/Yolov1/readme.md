@@ -12,7 +12,7 @@
     
  # Deep Understanding of YOLOv1 and Object Detection System Based on YOLOv1
  
-### Course  Instructor:  Dr.  Chinmay Hegde
+#### Course  Instructor:  Dr.  Chinmay Hegde
 
 #### Binfang Ye, Simon Wang
 
