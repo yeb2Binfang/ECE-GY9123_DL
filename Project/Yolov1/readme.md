@@ -120,17 +120,20 @@ Our dataset of choice is the PascalVOC dataset that contains 43,223 images. This
 
 </div>
 
+We save our pretrained model [here](). We can just download all of scripts including dataset.py, loss.py, utils.py, model.py and upload it to Google Colab. Then we need to downlaod the train.csv, evalution.csv, and test .csv files to access the dataset that is mentioned in section **Dataset Description**. We also have the script for generating CSV file if you want to change the number of the training, evalution, and testing dataset. We need to use Google Colab GPU to accerlate the training speed. If you want to re-train the model, it will take about 3 hours to finish using 5,000 images.  
 
+<div align = "center">
+  
+## Reference
 
-#### 7	References
-https://www.kaggle.com/dataset/734b7bcb7ef13a045cbdd007a3c19874c2586ed0b02b4afc86126e89d00af8d2	
+</div>
 
-​			PASCAL_VOC Dataset	
-https://arxiv.org/pdf/1506.02640.pdf	
+Alexey Bochkovskiy, Chien-Yao Wang, and Hong-Yuan Mark Liao.   Yolov4:  Optimal speed andaccuracy of object detection.arXiv preprint arXiv:2004.10934, 2020.
 
-​			You Only Look Once: Unified, Real-Time Object Detection
+Joseph Redmon and Ali Farhadi.   Yolo9000:  better, faster, stronger.   InProceedings of the IEEEconference on computer vision and pattern recognition, pp. 7263–7271, 2017.
 
-​			Joseph Redmon, Santosh Divvala, Ross Girshick , Ali Farhadi
-https://github.com/abeardear/pytorch-YOLO-v1	
+Joseph  Redmon  and  Ali  Farhadi.Yolov3:    An  incremental  improvement.arXiv preprintarXiv:1804.02767, 2018.
 
-​			Guide on YOLO V1 implementation
+Joseph Redmon, Santosh Divvala, Ross Girshick, and Ali Farhadi.  You only look once:  Unified,real-time object detection. InProceedings of the IEEE conference on computer vision and patternrecognition, pp. 779–788, 2016
+
+[Guide on YOLO V1 implementation](https://www.youtube.com/watch?v=n9_XyCGr-MI)
