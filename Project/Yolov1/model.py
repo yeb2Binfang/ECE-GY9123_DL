@@ -33,7 +33,7 @@ yolov1_cnn_architecture = [
 
 class CNNBlock(nn.Module):
     def __init__(self, in_channels, out_channels, **kwargs):
-        #这个super不知道干嘛的
+        
         super(CNNBlock,self).__init__()
         self.conv = nn.Conv2d(in_channels,out_channels,bias=False,**kwargs)
         self.batchnorm = nn.BatchNorm2d(out_channels)
